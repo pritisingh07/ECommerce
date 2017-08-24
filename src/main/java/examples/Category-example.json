@@ -1,0 +1,24 @@
+{
+  "categoryId":"32",
+  "name":{
+    "en":"skirt",
+    "de":"skirt"
+  },
+  "parent":"45",
+  "ancestors":[
+    {
+      "categoryId":"46",
+      "name":{
+        "en":"western wear",
+        "de":"westlich kleidung"
+      }
+    },
+    {
+      "categoryId":"48",
+      "name":{
+        "en":"women",
+        "de":"damen"
+      }
+    }
+  ]
+}

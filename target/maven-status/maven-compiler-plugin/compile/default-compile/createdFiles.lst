@@ -1,0 +1,14 @@
+businesslogic\MessageConstants.class
+exercise\ProductRestController.class
+exercise\CategoryRestController.class
+exercise\SwaggerConfig.class
+com\commerce\category\GenericCategoryRepository.class
+com\commerce\product\ProductRepository.class
+com\commerce\category\CategoryRepository.class
+com\commerce\price\CurrencyRateRepository.class
+com\commerce\price\GenericCurrencyRateRepository.class
+model\Product.class
+model\Category.class
+com\commerce\product\GenericProductRepository.class
+exercise\Application.class
+com\commerce\price\CurrencyConverter.class
