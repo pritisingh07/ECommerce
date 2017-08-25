@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: exercise.DefaultRestControllerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.002 sec - in exercise.DefaultRestControllerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.453 sec - in exercise.DefaultRestControllerTest

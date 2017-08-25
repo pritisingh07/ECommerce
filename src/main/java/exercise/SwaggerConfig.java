@@ -1,13 +1,11 @@
 package exercise;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
 import com.commerce.category.GenericCategoryRepository;
 import com.commerce.price.CurrencyConverter;
 import com.commerce.price.GenericCurrencyRateRepository;
 import com.commerce.product.GenericProductRepository;
-
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -15,7 +13,7 @@ import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
- 
+
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
@@ -28,36 +26,36 @@ public class SwaggerConfig {
                 .build()
                 .apiInfo(metaData());
     }
-    
+
     private ApiInfo metaData() {
         ApiInfo apiInfo = new ApiInfo(
-                "Sample Spring Boot REST API for E Commerece Platform",
+                "Sample Spring Boot REST API for Commerce Scenario",
                 "",
                 "1.0",
                 "Terms of service",
                 new Contact("Priti Singh", "", "pritisingh0009@gmail.com"),
-               "",
+                "",
                 "");
         return apiInfo;
     }
-    
+
     @Bean
     public GenericProductRepository createProcessor() {
-    	return new GenericProductRepository();
+        return new GenericProductRepository();
     }
-    
+
     @Bean
     public GenericCategoryRepository createCategoryRepository() {
-    	return new GenericCategoryRepository();
+        return new GenericCategoryRepository();
     }
-    
+
     @Bean
     public GenericCurrencyRateRepository createCurrencyRepository() {
-    	return new GenericCurrencyRateRepository();
+        return new GenericCurrencyRateRepository();
     }
-    
+
     @Bean
     public CurrencyConverter createCurrencyConverter() {
-    	return new CurrencyConverter();
+        return new CurrencyConverter();
     }
 }

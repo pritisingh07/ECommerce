@@ -1,10 +1,9 @@
 package com.commerce.category;
 
+import model.Category;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import model.Category;
+public interface CategoryRepository extends MongoRepository<Category, String> {
 
-public interface CategoryRepository extends MongoRepository<Category, String>{
-
-	public Category findByCategoryId(String categoryId);
+    public Category findByCategoryId(final String categoryId);
 }

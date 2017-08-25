@@ -1,26 +1,26 @@
 {
-  "productId":"top01",
-  "name":{
-    "de":"croppen top",
-    "en":"crop top"
+  "productId": "top01",
+  "name": {
+    "de": "croppen top",
+    "en": "crop top"
   },
-  "description":{
-    "de":"croppen top",
-    "en":"crop top"
+  "description": {
+    "de": "croppen top",
+    "en": "crop top"
   },
-  "details":{
-    "color":"yellow",
-    "size":[
+  "details": {
+    "color": "yellow",
+    "size": [
       "S",
       "M"
     ],
-    "material":"cotton"
+    "material": "cotton"
   },
-  "categoryId":"32",
-  "price":{
-    "base":"USD",
-    "amount":234.78,
-    "supportedCurrencies":[
+  "categoryId": "32",
+  "price": {
+    "base": "USD",
+    "amount": 234.78,
+    "supportedCurrencies": [
       "INR",
       "EUR"
     ]

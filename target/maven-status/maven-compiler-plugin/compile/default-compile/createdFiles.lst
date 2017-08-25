@@ -1,4 +1,3 @@
-businesslogic\MessageConstants.class
 exercise\ProductRestController.class
 exercise\CategoryRestController.class
 exercise\SwaggerConfig.class
@@ -7,6 +6,7 @@ com\commerce\product\ProductRepository.class
 com\commerce\category\CategoryRepository.class
 com\commerce\price\CurrencyRateRepository.class
 com\commerce\price\GenericCurrencyRateRepository.class
+config\MessageConstants.class
 model\Product.class
 model\Category.class
 com\commerce\product\GenericProductRepository.class

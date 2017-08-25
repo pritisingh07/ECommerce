@@ -26,47 +26,35 @@ public class GenericProductRepository {
 		return repository.findAll();
 	}
 	
-	public List<Product> getProductsByCategoryId(String categoryId) {
+	public List<Product> getProductsByCategoryId(final String categoryId) {
 		return repository.findByCategoryId(categoryId);
 	}
 
-	public String saveProduct(Product product) {
+	public String saveProduct(final Product product) {
 
-		if (product == null) {
-			return MessageConstants.BAD_PAYLOAD;
-		}
-		
 		Map<String, Double> amountInSupportedCurrencies =
 				currencyConverter.calculatePriceInOtherCurrencies(product.getPrice());
 		
 		product.getPrice().put("amountInSupportedCurrencies", (Object) amountInSupportedCurrencies);
-		
 		Product savedProduct = repository.save(product);
 		return savedProduct.getProductId();
 
 	}
 
-	public String updateProduct(String id, Product product) {
+	public String updateProduct(final String id, final Product product) {
 
-		if (product == null) {
-			return MessageConstants.BAD_PAYLOAD;
-		}
-		
 			Product productInDb = repository.findByProductId(product.getProductId());
 			product.setId(productInDb.getId());
-
 			Product productSaved = repository.save(product);
-
 			return productSaved.getProductId();
 		
 	}
 
-	public String deleteProductById(String id) {
+	public String deleteProductById(final String id) {
 
 		Product product = repository.findByProductId(id);
 		if (product != null) {
 			repository.delete(product);
-
 			return MessageConstants.PRODUCT_DELETED;
 		} else {
 			return MessageConstants.PRODUCT_NOT_PRESENT;

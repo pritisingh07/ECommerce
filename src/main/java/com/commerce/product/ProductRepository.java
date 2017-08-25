@@ -1,16 +1,15 @@
 package com.commerce.product;
 
-import java.util.List;
-
+import model.Product;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import model.Product;
+import java.util.List;
 
 
-public interface ProductRepository extends MongoRepository<Product, String>{
-	
-	public Product findByProductId(String productId);
-	
-	public List<Product> findByCategoryId(String categoryId);
+public interface ProductRepository extends MongoRepository<Product, String> {
+
+    public Product findByProductId(final String productId);
+
+    public List<Product> findByCategoryId(final String categoryId);
 
 }

@@ -1,7 +1,6 @@
 package groovy
 
 import groovy.json.JsonBuilder
-import groovy.json.JsonOutput
 import groovyx.net.http.RESTClient
 import org.apache.http.HttpStatus
 import spock.lang.Specification
@@ -10,62 +9,45 @@ import static groovyx.net.http.ContentType.JSON
 
 class ProductSpecification extends Specification {
 
-	/*def "Should create Product"() {
-		given:
+    def static final  id = UUID.randomUUID().toString()
 
-		def json = new JsonBuilder()
+    def "Should create Product"() {
+        given:
 
-		json {
-			productId "top01"
-			name {
-				en 'crop_top'
-				de 'cropten top'
-			}
-			price {
-				base 'INR'  // parenthesis are optional
-				amount 100.56
-				supportedCurrencies 'EUR', 'USD'
-			}
-			categoryId '32'
-		}
+        def json = new JsonBuilder()
 
-
-		when:
-		def prettyJson = JsonOutput.prettyPrint(json.toString())println("---------"+json.toString())
-		def client = new RESTClient("http://localhost:8080", JSON)
-		def response = client.post(path: "/products", body: json.toString())
-		
-		then:
-		println("-------" + response.toString())
-		response.status == HttpStatus.SC_OK
-	}*/
+        json {
+            productId id
+            name {
+                en 'crop_top'
+                de 'cropten top'
+            }
+            price {
+                base 'INR'  // parenthesis are optional
+                amount 100.56
+                supportedCurrencies 'EUR', 'USD'
+            }
+            categoryId '32'
+        }
 
 
-	/*def "Should get Product"() {
-		given:
+        when:
+        //def prettyJson = JsonOutput.prettyPrint(json.toString())println("---------"+json.toString())
+        def client = new RESTClient("http://localhost:8080", JSON)
+        def response = client.post(path: "/products", body: json.toString())
 
-		def json = new JsonBuilder()
+        then:
+        println("-------" + response.toString())
+        assert response.status == HttpStatus.SC_CREATED
+    }
 
-		json {
-			productId "top01"
-			name {
-				en 'crop_top'
-				de 'cropten top'
-			}
-			price {
-				base 'INR'  // parenthesis are optional
-				amount 100.56
-				supportedCurrencies 'EUR', 'USD'
-			}
-			categoryId '32'
-		}
+    def "Should get Product"() {
 
+        when:
+        def client = new RESTClient("http://localhost:8080", JSON)
+        def response = client.get(path: "/products/"+id)
 
-		when:
-		def client = new RESTClient("http://localhost:8080", JSON)
-		def response = client.get(path: "/products", query:[id:])
-
-		then:
-		response.status == HttpStatus.SC_OK
-	}*/
+        then:
+         assert response.status == HttpStatus.SC_OK
+    }
 }
